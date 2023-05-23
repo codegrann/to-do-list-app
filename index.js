@@ -1,12 +1,12 @@
 let addButton = document.querySelector("#addBtn");
+let tasks = document.querySelector("#tasks");
 addButton.addEventListener("click", addTask);
-
+tasks.innerHTML=`<p>No tasks yet</p>`;
 
 function addTask() {
     let input = document.querySelector("#addText");
-    let tasks = document.querySelector("#tasks");
 
-
+    
     if (input.value.length == 0) {
         alert("Please enter title of your task to continue.")
     }
@@ -23,7 +23,7 @@ function addTask() {
         //         deleteButton.nextElementSibling.style.color="red";
         //     })
         // }
-
+        // tasks.innerHTML=``;
         tasks.innerHTML += `
         <div class="taskEach">
           <input type="text" class="task taskText" value="${input.value}" readonly>
