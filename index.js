@@ -5,25 +5,25 @@ addButton.addEventListener("click", addTask);
 function addTask() {
     let input = document.querySelector("#addText");
     let tasks = document.querySelector("#tasks");
-    
+
     if (input.value.length == 0) {
         alert("Please enter title of your task to continue.")
-        
+
     }
     else {
         let enterDate = prompt("Enter due date: yyyy-mm-dd");
         let userDate = new Date(enterDate)
         let today = new Date();
-        let daysLeft = (userDate - today)/(24*60*60*1000);
-        if(daysLeft<0){
-            daysLeft=0;
+        let daysLeft = (userDate - today) / (24 * 60 * 60 * 1000);
+        if (daysLeft < 0) {
+            daysLeft = 0;
         }
         // else if(daysLeft<3){
         //     document.querySelectorAll(".remove").forEach((deleteButton)=>{
         //         deleteButton.nextElementSibling.style.color="red";
         //     })
         // }
-        tasks.innerHTML +=`
+        tasks.innerHTML += `
         <div class="taskEach">
           <input type="checkbox" class="check">
           <input type="text" class="task taskText" value="${input.value}" readonly>
@@ -57,9 +57,11 @@ function addTask() {
         )
 
         // Handling checkbox
-        let checkButtons=document.querySelectorAll(".check");
-        checkButtons.forEach((checkButton)=>{
-            
+        let checkButtons = document.querySelectorAll(".check");
+        checkButtons.forEach((checkButton) => {
+            checkButton.onclick = function () {
+                checkButton.parentNode.remove();
+            }
         }
 
         )
