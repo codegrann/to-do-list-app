@@ -6,6 +6,25 @@ function addTask() {
     let input = document.querySelector("#addText");
     let tasks = document.querySelector("#tasks");
 
+
+
+ let checkButtons = document.querySelectorAll(".check");
+         checkButtons.forEach((checkButton) => {
+             checkButton.onclick = function () {
+                 if(checkButton.checked==true){
+                    checkButton.nextElementSibling.style.color="red";
+                    checkButton.nextElementSibling.style.textDecoration="line-through";
+                }
+                else{
+                    checkButton.nextElementSibling.style.color="black";
+                }
+             }
+         }
+         
+         )
+
+
+
     if (input.value.length == 0) {
         alert("Please enter title of your task to continue.")
 
@@ -44,9 +63,15 @@ function addTask() {
          // Handling checkbox
          let checkButtons = document.querySelectorAll(".check");
          checkButtons.forEach((checkButton) => {
-             checkButton.style.width="5rem"
              checkButton.onclick = function () {
-                 checkButton.nextElementSibling.remove();
+                 if(checkButton.checked==true){
+                    // checkButton.nextElementSibling.style.color="red";
+                    checkButton.nextElementSibling.style.textDecoration="line-through";
+                }
+                else{
+                    // checkButton.nextElementSibling.style.color="black";
+                    checkButton.nextElementSibling.style.textDecoration="none";
+                }
              }
          }
          
