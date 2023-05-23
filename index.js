@@ -19,14 +19,8 @@ function addTask() {
         if (daysLeft < 0) {
             daysLeft = 0;
         }
-        // else if(daysLeft<3){
-        //     document.querySelectorAll(".remove").forEach((deleteButton)=>{
-        //         deleteButton.nextElementSibling.style.color="red";
-        //     })
-        // }
 
-
-
+        // Update the task container with tasks being added
 
         tasks.innerHTML += `
         <div class="taskEach">
