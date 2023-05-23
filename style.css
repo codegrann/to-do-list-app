@@ -62,3 +62,7 @@ body{
     gap: 0.75rem;
     align-items: center;
 }
+.check{
+    width: 1rem;
+    height: 1rem;
+}
