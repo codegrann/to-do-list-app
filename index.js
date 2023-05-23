@@ -23,6 +23,10 @@ function addTask() {
         //         deleteButton.nextElementSibling.style.color="red";
         //     })
         // }
+
+
+
+
         tasks.innerHTML += `
         <div class="taskEach">
           <input type="checkbox" class="check">
@@ -34,6 +38,20 @@ function addTask() {
         </div> 
         `;
         input.value = "";
+
+
+
+         // Handling checkbox
+         let checkButtons = document.querySelectorAll(".check");
+         checkButtons.forEach((checkButton) => {
+             checkButton.style.width="5rem"
+             checkButton.onclick = function () {
+                 checkButton.nextElementSibling.remove();
+             }
+         }
+         
+         )
+ 
 
         // EDITING A TASK
 
@@ -56,15 +74,7 @@ function addTask() {
         }
         )
 
-        // Handling checkbox
-        let checkButtons = document.querySelectorAll(".check");
-        checkButtons.forEach((checkButton) => {
-            checkButton.onclick = function () {
-                checkButton.parentNode.remove();
-            }
-        }
-
-        )
+       
 
     }
 }
