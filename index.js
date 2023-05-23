@@ -25,6 +25,7 @@ function addTask() {
         // }
         tasks.innerHTML +=`
         <div class="taskEach">
+          <input type="checkbox" class="check">
           <input type="text" class="task taskText" value="${input.value}" readonly>
           <button class="button edit">edit</button>
           <button class="remove button">&times;</button>
@@ -53,6 +54,14 @@ function addTask() {
 
             }
         }
+        )
+
+        // Handling checkbox
+        let checkButtons=document.querySelectorAll(".check");
+        checkButtons.forEach((checkButton)=>{
+            
+        }
+
         )
 
     }
